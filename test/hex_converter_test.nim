@@ -1,8 +1,8 @@
 import ../src/hex_converter
 
 block test:
-  var hexConverter = createHexConverter("DEADBF")
+  var hexConverter = createHexConverter("7B2D43")
   var rgb = hexConverter.toRgb
-  assert 1 == rgb[0]
-  assert 1 == rgb[1]
-  assert 1 == rgb[2]
+  assert 123 == rgb[0]
+  assert 45 == rgb[1]
+  assert 67 == rgb[2]
