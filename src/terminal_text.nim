@@ -5,6 +5,7 @@ type TerminalText = string
 type TerminalTextCreater* = object
 
 proc createHexText*(creater: TerminalTextCreater, color: HexColor): TerminalText =
-  let terminal_text: TerminalText = fmt"[ { color } ]"
+  let hex_color = color.getColor()
+  let terminal_text: TerminalText = fmt"[ { hex_color } ]"
 
   return terminal_text

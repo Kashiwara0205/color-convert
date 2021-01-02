@@ -3,17 +3,18 @@ import ../color/rgb_color
 import ../color/hex_color
 
 type HexConverter* = object
-  hexValue: HexColor
+  color: HexColor
 
-func createHexConverter*(hexValue: HexColor): HexConverter =
-  return HexConverter(hexValue: hexValue)
+func createHexConverter*(color: HexColor): HexConverter =
+  return HexConverter(color: color)
 
 proc toHex*(converterObj: HexConverter): HexColor = 
-  return converterObj.hexValue
+  return converterObj.color
 
 proc toRgb*(converterObj: HexConverter): RgbColor = 
-  let r = converterObj.hexValue[0] & converterObj.hexValue[1]
-  let g = converterObj.hexValue[2] & converterObj.hexValue[3]
-  let b = converterObj.hexValue[4] & converterObj.hexValue[5]
+  let color = converterObj.color.getColor
+  let r = color[0] & color[1]
+  let g = color[2] & color[3]
+  let b = color[4] & color[5]
 
   return createRgb(fromHex[int](r), fromHex[int](g), fromHex[int](b))
