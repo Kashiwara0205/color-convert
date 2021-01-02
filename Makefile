@@ -3,3 +3,5 @@ unit:
 	./test/hex_converter_test
 	nim c test/rgb_color_test
 	./test/rgb_color_test
+	nim c test/terminal_text_test
+	./test/terminal_text_test

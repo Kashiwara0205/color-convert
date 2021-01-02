@@ -1,4 +1,4 @@
-import ../src/rgb_color
+import ../src/color/rgb_color
 
 block test:
   let rgb = createRgb(1, 2, 3)
