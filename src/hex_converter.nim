@@ -1,11 +1,15 @@
 import strutils
 import rgb_color
+import hex_color
 
 type HexConverter* = object
   hexValue:string
 
 func createHexConverter*(hexValue: string): HexConverter =
   return HexConverter(hexValue: hexValue)
+
+proc toHex*(converterObj: HexConverter): HexColor = 
+  return converterObj.hexValue
 
 proc toRgb*(converterObj: HexConverter): RgbColor = 
   let r = converterObj.hexValue[0] & converterObj.hexValue[1]
