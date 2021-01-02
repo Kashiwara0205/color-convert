@@ -1,11 +1,11 @@
 import strutils
-import rgb_color
-import hex_color
+import ../color/rgb_color
+import ../color/hex_color
 
 type HexConverter* = object
-  hexValue:string
+  hexValue: HexColor
 
-func createHexConverter*(hexValue: string): HexConverter =
+func createHexConverter*(hexValue: HexColor): HexConverter =
   return HexConverter(hexValue: hexValue)
 
 proc toHex*(converterObj: HexConverter): HexColor = 

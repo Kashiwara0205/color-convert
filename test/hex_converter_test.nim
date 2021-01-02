@@ -1,5 +1,5 @@
-import ../src/hex_converter
-import ../src/rgb_color
+import ../src/converting/hex_converter
+import ../src/color/rgb_color
 
 block test:
   # outline: should get rgb from hex
