@@ -4,5 +4,5 @@ type HexColor* = object
 proc getColor*(color: HexColor): string = 
   return color.color_code
 
-func createHexColor*(color_code: string): HexColor = 
+proc createHexColor*(color_code: string): HexColor = 
   return HexColor(color_code: color_code)
