@@ -1,4 +1,4 @@
-import ../src/terminal_text
+import ../src/terminal_text/terminal_text
 import ../src/color/hex_color
 
 block test:

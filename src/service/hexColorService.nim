@@ -1,7 +1,6 @@
 import ../converting/hex_converter
 import ../color/hex_color
-import ../terminal_text
-
+import ../terminal_text/terminal_text
 
 type hexColorService* = object
 
