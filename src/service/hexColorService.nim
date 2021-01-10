@@ -5,10 +5,8 @@ import ../terminal_text
 
 type hexColorService* = object
 
-proc toHex*(service: hexColorService, iOption: string): void =
-  let terminalTextGetter = TerminalTextGetter()
-  let hexColorText = terminalTextGetter.getColorTextFromOption(iOption)
-  var color = createHexColor(hexColorText)
+proc toHex*(service: hexColorService, colorText: string): void =
+  var color = createHexColor(colorText)
   var colorConverter = createHexConverter(color)
 
   var textCreater = TerminalTextCreater()
