@@ -17,6 +17,6 @@ proc createRgbText*(creater: TerminalTextCreater, color: RgbColor): TerminalText
   let green_color = color.getGreenColor()
   let blue_color = color.getBlueColor()
 
-  let terminal_text: TerminalText = fmt"[ R: { red_color } G: { green_color } B: { blue_color }]"
+  let terminal_text: TerminalText = fmt"[ R: { red_color } G: { green_color } B: { blue_color } ]"
 
   return terminal_text
