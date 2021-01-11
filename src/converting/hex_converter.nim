@@ -17,4 +17,4 @@ proc toRgb*(converterObj: HexConverter): RgbColor =
   let g = color[2] & color[3]
   let b = color[4] & color[5]
 
-  return createRgb(fromHex[int](r), fromHex[int](g), fromHex[int](b))
+  return createRgb(fromHex[uint16](r), fromHex[uint16](g), fromHex[uint16](b))

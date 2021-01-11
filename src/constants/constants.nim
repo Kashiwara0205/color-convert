@@ -7,7 +7,7 @@ const INSTRUCTIONS* = """
 [ Instructions ]
 
 Example: color_convert --iHex:7B2D43 --oRgb
-=> [ R: 123 G: 45 B: 67]
+=> [ R: 123 G: 45 B: 67 ]
 
 
 ---------------------------------------------
