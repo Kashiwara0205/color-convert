@@ -1,10 +1,11 @@
 import ../src/service/hexColorService
 import ../src/option/color_option
+import ../src/constants/constants
 
 let option = createColorOption("--iHex:7B2D43", "--oHex")
 case option.input
-of "--iHex":
+of I_HEX:
   let service = hexColorService()
   case option.output:
-  of "--oHex":
-    service.toHex(option.colorText)
+  of O_HEX:
+    service.toHex(option.colorValue)
