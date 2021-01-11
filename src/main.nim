@@ -1,8 +1,16 @@
+import os
 import ../src/service/hexColorService
 import ../src/option/color_option
 import ../src/constants/constants
 
-let option = createColorOption("--iHex:7B2D43", "--oRgb")
+
+proc shouldDispInstruction():bool = return paramCount() == 0 or paramCount() == 1
+
+if shouldDispInstruction():
+  echo INSTRUCTIONS
+  system.quit(QuitSuccess)
+
+let option = createColorOption(paramStr(1), paramStr(2))
 case option.input
 of I_HEX:
   let service = hexColorService()
