@@ -1,13 +1,13 @@
 type RgbColor* = object
-  r*: uint16
-  g*: uint16
-  b*: uint16
+  r*: uint
+  g*: uint
+  b*: uint
 
-proc getRedColor*(rgb: RgbColor): uint16 = rgb.r
+proc getRedColor*(rgb: RgbColor): uint = rgb.r
 
-proc getGreenColor*(rgb: RgbColor): uint16 = rgb.g
+proc getGreenColor*(rgb: RgbColor): uint = rgb.g
 
-proc getBlueColor*(rgb: RgbColor): uint16 =  rgb.b
+proc getBlueColor*(rgb: RgbColor): uint =  rgb.b
 
-func createRgb*(r: uint16, g: uint16, b:uint16): RgbColor = 
+func createRgb*(r: uint, g: uint, b:uint): RgbColor = 
   return RgbColor(r: r, g: g, b: b)

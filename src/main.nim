@@ -1,5 +1,6 @@
 import os
-import ../src/service/hexColorService
+import ../src/service/hex_color_service
+import ../src/service/rgb_color_service
 import ../src/option/color_option
 import ../src/constants/constants
 
@@ -10,7 +11,14 @@ proc convert(input: string, output: string): void =
     let option = createColorOption(input, output)
     case option.input
     of I_HEX:
-      let service = hexColorService()
+      let service = HexColorService()
+      case option.output:
+      of O_HEX:
+        service.toHex(option.colorValue)
+      of O_RGB:
+        service.toRgb(option.colorValue)
+    of I_RGB:
+      let service = RgbColorService()
       case option.output:
       of O_HEX:
         service.toHex(option.colorValue)
