@@ -1,1 +1,0 @@
-const RED* = "Red"
