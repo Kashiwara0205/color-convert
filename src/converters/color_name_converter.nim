@@ -2,7 +2,7 @@ import rgb_color_converter
 import ../color/color_name
 import ../color/rgb_color
 import ../color/hex_color
-import ../constants/color_name as const_color_name
+import ../constants/color as const_color_name
 
 type ColorNameConverter* = object
   color*: ColorName
@@ -12,18 +12,18 @@ func createColorNameConverter*(color: ColorName): ColorNameConverter =
 
 proc toRgb*(converterObj: ColorNameConverter): RgbColor = 
   case converterObj.color.getColorName:
-  of RED: return createRgb(255, 0, 0)
-  of GREEN: return createRgb(0, 255, 0)
-  of BLUE: return createRgb(0, 0, 255)
-  of YELLOW: return createRgb(255, 255, 0)
-  of BLACK: return createRgb(0, 0, 0)
-  of WHITE: return createRgb(255, 255, 255)
+  of RED: return createRgb(RED_RGB[0], RED_RGB[1], RED_RGB[2])
+  of GREEN: return createRgb(GREEN_RGB[0], GREEN_RGB[1], GREEN_RGB[2])
+  of BLUE: return createRgb(BLUE_RGB[0], BLUE_RGB[1], BLUE_RGB[2])
+  of YELLOW: return createRgb(YELLOW_RGB[0], YELLOW_RGB[1], YELLOW_RGB[2])
+  of BLACK: return createRgb(BLACK_RGB[0], BLACK_RGB[1], BLACK_RGB[2])
+  of WHITE: return createRgb(WHITE_RGB[0], WHITE_RGB[1], WHITE_RGB[2])
 
 proc toHex*(converterObj: ColorNameConverter): HexColor = 
   case converterObj.color.getColorName:
-  of RED: return createRgbColorConverter(createRgb(255, 0, 0)).toHex
-  of GREEN: return createRgbColorConverter(createRgb(0, 255, 0)).toHex
-  of BLUE: return createRgbColorConverter(createRgb(0, 0, 255)).toHex
-  of YELLOW: return createRgbColorConverter(createRgb(255, 255, 0)).toHex
-  of BLACK: return createRgbColorConverter(createRgb(0, 0, 0)).toHex
-  of WHITE: return createRgbColorConverter(createRgb(255, 255, 255)).toHex
+  of RED: return createRgbColorConverter(createRgb(RED_RGB[0], RED_RGB[1], RED_RGB[2])).toHex
+  of GREEN: return createRgbColorConverter(createRgb(GREEN_RGB[0], GREEN_RGB[1], GREEN_RGB[2])).toHex
+  of BLUE: return createRgbColorConverter(createRgb(BLUE_RGB[0], BLUE_RGB[1], BLUE_RGB[2])).toHex
+  of YELLOW: return createRgbColorConverter(createRgb(YELLOW_RGB[0], YELLOW_RGB[1], YELLOW_RGB[2])).toHex
+  of BLACK: return createRgbColorConverter(createRgb(BLACK_RGB[0], BLACK_RGB[1], BLACK_RGB[2])).toHex
+  of WHITE: return createRgbColorConverter(createRgb(WHITE_RGB[0], WHITE_RGB[1], WHITE_RGB[2])).toHex
