@@ -1,7 +1,10 @@
 const I_HEX* = "--iHex"
 const O_HEX* = "--oHex"
+
 const I_RGB* = "--iRgb"
 const O_RGB* = "--oRgb"
+
+const I_COLOR* = "--iColor"
 
 const INSTRUCTIONS* = """
 [ Instructions ]
@@ -16,12 +19,12 @@ color_convert --iRgb:123,45,67 --oHex
 
 
 ----------------------------------------------------
-Input option   | description
+Input option     | description
 ----------------------------------------------------
---iHex:{value} | Input Hexadecimal. example: 7B2D43
---iRgb:{value} | Input RgbCode. example: 123,45,67
+--iHex:{value}   | Input Hexadecimal. example: 7B2D43
+--iRgb:{value}   | Input RgbCode. example: 123,45,67
+--iColor:{value} | Input ColorName. example: Red
 ----------------------------------------------------
-
 
 ---------------------------------------------------
 Out Option     | description
