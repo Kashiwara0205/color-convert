@@ -1,6 +1,6 @@
 import sequtils
 import strutils
-import ../constants/constants
+import ../constants/option as const_option
 
 proc validInputOptionForm(input: string): bool = 
   if input.find(":") == -1: return false

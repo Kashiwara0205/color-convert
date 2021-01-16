@@ -1,9 +1,16 @@
 import os
-import ../src/service/hex_color_service
-import ../src/service/rgb_color_service
-import ../src/service/color_name_service
-import ../src/option/color_option
-import ../src/constants/constants
+
+import 
+  ../src/service/hex_color_service,
+  ../src/service/rgb_color_service,
+  ../src/service/color_name_service
+
+import 
+  ../src/option/color_option
+
+import 
+  ../src/constants/option as const_option,
+  ../src/constants/instructions
 
 proc shouldDispInstruction():bool = return paramCount() == 0 or paramCount() == 1
 
