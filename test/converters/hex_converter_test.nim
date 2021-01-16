@@ -1,4 +1,4 @@
-import ../../src/converting/hex_converter
+import ../../src/converters/hex_converter
 import ../../src/color/hex_color
 import ../../src/color/rgb_color
 import unittest

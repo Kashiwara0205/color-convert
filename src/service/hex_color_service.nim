@@ -1,4 +1,4 @@
-import ../converting/hex_converter
+import ../converters/hex_converter
 import ../color/hex_color
 import ../terminal_text/terminal_text
 

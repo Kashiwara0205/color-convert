@@ -1,5 +1,5 @@
 import strutils
-import ../converting/rgb_converter
+import ../converters/rgb_converter
 import ../color/hex_color
 import ../color/rgb_color
 import ../terminal_text/terminal_text
