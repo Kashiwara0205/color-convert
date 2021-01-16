@@ -28,7 +28,7 @@ suite "description for ColorNameConverter":
     colorNameConverter = createColorNameConverter(createColorName("Yellow"))
     rgb = colorNameConverter.toRgb
     check 255 == rgb.getRedColor
-    check 251 == rgb.getGreenColor
+    check 255 == rgb.getGreenColor
     check 0 == rgb.getBlueColor
 
     colorNameConverter = createColorNameConverter(createColorName("Black"))
@@ -42,3 +42,22 @@ suite "description for ColorNameConverter":
     check 255 == rgb.getRedColor
     check 255 == rgb.getGreenColor
     check 255 == rgb.getBlueColor
+
+  test "should convert to hex":
+    var colorNameConverter = createColorNameConverter(createColorName("Red"))
+    check "E60012" == colorNameConverter.toHex.getColor
+
+    colorNameConverter = createColorNameConverter(createColorName("Green"))
+    check "009944" == colorNameConverter.toHex.getColor
+  
+    colorNameConverter = createColorNameConverter(createColorName("Blue"))
+    check "1D2088" == colorNameConverter.toHex.getColor
+
+    colorNameConverter = createColorNameConverter(createColorName("Yellow"))
+    check "FFFF00" == colorNameConverter.toHex.getColor
+
+    colorNameConverter = createColorNameConverter(createColorName("Black"))
+    check "000000" == colorNameConverter.toHex.getColor
+
+    colorNameConverter = createColorNameConverter(createColorName("White"))
+    check "FFFFFF" == colorNameConverter.toHex.getColor
