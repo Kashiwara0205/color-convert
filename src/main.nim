@@ -1,6 +1,7 @@
 import os
 
 import 
+  ../src/service/base_service,
   ../src/service/hex_color_service,
   ../src/service/rgb_color_service,
   ../src/service/color_name_service
@@ -14,31 +15,24 @@ import
 
 proc shouldDispInstruction():bool = return paramCount() == 0 or paramCount() == 1
 
-proc convert(input: string, output: string): void = 
+proc createColorConvertService(option: ColorOption): BaseService = 
+  case option.input
+  of I_HEX:
+    return HexColorService()
+  of I_RGB:
+    return RgbColorService()
+  of I_COLOR:
+    return ColorNameService()
+
+proc convert(input_option: string, output_option: string): void = 
   try:
-    let option = createColorOption(input, output)
-    case option.input
-    of I_HEX:
-      let service = HexColorService()
-      case option.output:
-      of O_HEX:
-        service.toHex(option.colorValue)
-      of O_RGB:
-        service.toRgb(option.colorValue)
-    of I_RGB:
-      let service = RgbColorService()
-      case option.output:
-      of O_HEX:
-        service.toHex(option.colorValue)
-      of O_RGB:
-        service.toRgb(option.colorValue)
-    of I_COLOR:
-      let service = ColorNameService()
-      case option.output:
-      of O_HEX:
-        service.toHex(option.colorValue)
-      of O_RGB:
-        service.toRgb(option.colorValue)
+    let option = createColorOption(input_option, output_option)
+    let service = createColorConvertService(option)
+    case option.output:
+    of O_HEX:
+      service.toHex(option.colorValue)
+    of O_RGB:
+      service.toRgb(option.colorValue)
   except:
     echo getCurrentExceptionMsg()
 
