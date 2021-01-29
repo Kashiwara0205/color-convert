@@ -13,7 +13,7 @@ import
   ../src/constants/option as const_option,
   ../src/constants/instructions
 
-proc shouldDispInstruction():bool = return paramCount() == 0 or paramCount() == 1
+proc notEnoughParamCount():bool = return paramCount() == 0 or paramCount() == 1
 
 proc createColorConvertService(option: ColorOption): BaseService = 
   case option.input
@@ -24,9 +24,8 @@ proc createColorConvertService(option: ColorOption): BaseService =
   of I_OPTION_COLOR:
     return ColorNameService()
 
-proc convert(input_option: string, output_option: string): void = 
+proc convert(option: ColorOption): void = 
   try:
-    let option = createColorOption(input_option, output_option)
     let service = createColorConvertService(option)
     case option.output:
     of O_OPTION_HEX:
@@ -36,8 +35,12 @@ proc convert(input_option: string, output_option: string): void =
   except:
     echo getCurrentExceptionMsg()
 
-if shouldDispInstruction():
-  echo INSTRUCTIONS
-  system.quit(QuitSuccess)
+proc main(): void =
+  if notEnoughParamCount():
+    echo INSTRUCTIONS
+    system.quit(QuitSuccess)
 
-convert(paramStr(1), paramStr(2))
+  let option = createColorOption(paramStr(1), paramStr(2))
+  convert(option)
+
+main()
