@@ -17,11 +17,11 @@ proc shouldDispInstruction():bool = return paramCount() == 0 or paramCount() == 
 
 proc createColorConvertService(option: ColorOption): BaseService = 
   case option.input
-  of I_HEX:
+  of I_OPTION_HEX:
     return HexColorService()
-  of I_RGB:
+  of I_OPTION_RGB:
     return RgbColorService()
-  of I_COLOR:
+  of I_OPTION_COLOR:
     return ColorNameService()
 
 proc convert(input_option: string, output_option: string): void = 
@@ -29,9 +29,9 @@ proc convert(input_option: string, output_option: string): void =
     let option = createColorOption(input_option, output_option)
     let service = createColorConvertService(option)
     case option.output:
-    of O_HEX:
+    of O_OPTION_HEX:
       service.toHex(option.colorValue)
-    of O_RGB:
+    of O_OPTION_RGB:
       service.toRgb(option.colorValue)
   except:
     echo getCurrentExceptionMsg()
