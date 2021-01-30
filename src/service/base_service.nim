@@ -1,4 +1,4 @@
 type BaseService* = ref object of RootObj
-proc toHex*(service: BaseService, hex_color_text: string): void = discard
-proc toRgb*(service: BaseService, hex_color_text: string): void = discard
-proc toCmyk*(service: BaseService, hex_color_text: string): void = discard
+method toHex*(service: BaseService, hex_color_text: string): void {.base.}= discard
+method toRgb*(service: BaseService, hex_color_text: string): void {.base.}= discard
+method toCmyk*(service: BaseService, hex_color_text: string): void {.base.}= discard

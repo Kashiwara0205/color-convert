@@ -1,4 +1,5 @@
 unit:
+	nim c -o:bin/color_convert src/main.nim
 	nim c -o:test_result/hex_color_converter_test -r test/converters/hex_color_converter_test.nim
 	nim c -o:test_result/rgb_color_converter_test -r test/converters/rgb_color_converter_test.nim
 	nim c -o:test_result/color_name_converter_test -r test/converters/color_name_converter_test.nim
