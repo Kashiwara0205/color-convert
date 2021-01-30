@@ -4,7 +4,8 @@ import
   ../src/service/base_service,
   ../src/service/hex_color_service,
   ../src/service/rgb_color_service,
-  ../src/service/color_name_service
+  ../src/service/color_name_service,
+  ../src/service/cmyk_color_service
 
 import 
   ../src/option/color_option
@@ -23,6 +24,8 @@ proc createColorConvertService(option: ColorOption): BaseService =
     return RgbColorService()
   of I_OPTION_COLOR:
     return ColorNameService()
+  of I_OPTION_CMYK:
+    return CmykColorService()
 
 proc convert(option: ColorOption): void = 
   try:

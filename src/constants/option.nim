@@ -6,4 +6,5 @@ const O_OPTION_RGB* = "--oRgb"
 
 const I_OPTION_COLOR* = "--iColor"
 
+const I_OPTION_CMYK* = "--iCmyk"
 const O_OPTION_CMYK* = "--oCmyk"
