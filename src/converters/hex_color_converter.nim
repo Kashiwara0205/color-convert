@@ -1,6 +1,8 @@
 import strutils
 import ../color/rgb_color
 import ../color/hex_color
+import ../color/cmyk_color
+import rgb_color_converter
 
 type HexColorConverter* = object
   color: HexColor
@@ -18,3 +20,7 @@ proc toRgb*(converterObj: HexColorConverter): RgbColor =
   let b = color[4] & color[5]
 
   return createRgb(fromHex[uint](r), fromHex[uint](g), fromHex[uint](b))
+
+proc toCmyk*(converterObj: HexColorConverter): CmykColor  =  
+  let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
+  return rgb_color_converter.toCmyk()
