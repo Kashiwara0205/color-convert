@@ -1,4 +1,5 @@
 from strformat import fmt
+import ../color/cmyk_color
 import ../color/hex_color
 import ../color/rgb_color
 
@@ -18,5 +19,15 @@ proc createRgbText*(creater: TerminalTextCreater, color: RgbColor): TerminalText
   let blue_color = color.getBlueColor()
 
   let terminal_text: TerminalText = fmt"[ R: { red_color } G: { green_color } B: { blue_color } ]"
+
+  return terminal_text
+
+proc createCmykText*(creater:TerminalTextCreater, color: CmykColor): TerminalText =
+  let cyan = color.getCyanColor()
+  let magenda = color.getMagentaColor()
+  let yellow = color.getYellowColor()
+  let black = color.getBlackColor()
+
+  let terminal_text: TerminalText = fmt"[ C: { cyan }% M: { magenda }% Y: { yellow }% B: { black }% ]"
 
   return terminal_text

@@ -5,6 +5,7 @@ import
   ../src/service/hex_color_service,
   ../src/service/rgb_color_service,
   ../src/service/color_name_service
+  ../src/service/
 
 import 
   ../src/option/color_option

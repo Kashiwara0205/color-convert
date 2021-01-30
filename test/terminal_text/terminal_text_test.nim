@@ -1,6 +1,7 @@
 import ../../src/terminal_text/terminal_text
 import ../../src/color/hex_color
 import ../../src/color/rgb_color
+import ../../src/color/cmyk_color
 import unittest
 
 suite "description for terminal text creater":
@@ -14,3 +15,8 @@ suite "description for terminal text creater":
     let rgb = createRgb(1, 2, 3)
     var creater = TerminalTextCreater()
     check "[ R: 1 G: 2 B: 3 ]" == creater.createRgbText(rgb)
+
+  test "should create cmyk text":
+    let cmyk = createCmykColor(1, 2, 3, 4)
+    var creater = TerminalTextCreater()
+    check "[ C: 1% M: 2% Y: 3% B: 4% ]" == creater.createCmykText(cmyk)
