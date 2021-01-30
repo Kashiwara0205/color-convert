@@ -15,7 +15,7 @@ proc validInputOptionName(input: string): bool =
   return @[I_OPTION_RGB, I_OPTION_HEX, I_OPTION_COLOR].anyIt(it == splitedinput[0])
 
 proc validOutputOptionName(output: string): bool = 
-  return @[O_OPTION_RGB, O_OPTION_HEX].anyIt(it == output)
+  return @[O_OPTION_RGB, O_OPTION_HEX, O_OPTION_CMYK].anyIt(it == output)
 
 proc validOption(input: string, output: string): void = 
   if not validInputOptionForm(input): raise Exception.newException("Wrong input form")

@@ -5,7 +5,6 @@ import
   ../src/service/hex_color_service,
   ../src/service/rgb_color_service,
   ../src/service/color_name_service
-  ../src/service/
 
 import 
   ../src/option/color_option
@@ -33,6 +32,8 @@ proc convert(option: ColorOption): void =
       service.toHex(option.colorValue)
     of O_OPTION_RGB:
       service.toRgb(option.colorValue)
+    of O_OPTION_CMYK:
+      service.toCmyk(option.colorValue)
   except:
     echo getCurrentExceptionMsg()
 

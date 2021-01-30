@@ -21,3 +21,11 @@ proc toRgb*(service: RgbColorService, color_value: string): void =
 
   var textCreater = TerminalTextCreater()
   echo textCreater.createRgbText(colorConverter.toRgb())
+
+proc toCmyk*(service: RgbColorService, color_value: string): void =
+  let rgb_values = color_value.split(",")
+  var color = createRgb(rgb_values[0].parseUInt, rgb_values[1].parseUInt, rgb_values[2].parseUInt)
+  var colorConverter = createRgbColorConverter(color)
+
+  var textCreater = TerminalTextCreater()
+  echo textCreater.createCmykText(colorConverter.toCmyk())

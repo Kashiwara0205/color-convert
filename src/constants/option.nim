@@ -5,3 +5,5 @@ const I_OPTION_RGB* = "--iRgb"
 const O_OPTION_RGB* = "--oRgb"
 
 const I_OPTION_COLOR* = "--iColor"
+
+const O_OPTION_CMYK* = "--oCmyk"

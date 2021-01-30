@@ -18,3 +18,10 @@ proc toRgb*(service: HexColorService, hex_color_text: string): void =
 
   var textCreater = TerminalTextCreater()
   echo textCreater.createRgbText(colorConverter.toRgb())
+
+proc toCmyk*(service: HexColorService, hex_color_text: string): void =
+  var color = createHexColor(hex_color_text)
+  var colorConverter = createHexColorConverter(color)
+
+  var textCreater = TerminalTextCreater()
+  echo textCreater.createCmykText(colorConverter.toCmyk())
