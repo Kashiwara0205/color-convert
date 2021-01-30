@@ -15,7 +15,7 @@ suite "check RgbColorConverter":
 
   test "should convert to hex":
     var RgbColorConverter = createRgbColorConverter(createRgb(123, 45, 67))
-    doAssert "7B2D43" == RgbColorConverter.toHex.getColor
+    check "7B2D43" == RgbColorConverter.toHex.getColor
 
   test "should convert to cmyk":
     var rgbColorConverter = createRgbColorConverter(createRgb(255, 0, 0))
