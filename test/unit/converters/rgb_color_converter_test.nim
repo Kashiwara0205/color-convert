@@ -1,7 +1,7 @@
-import ../../src/converters/rgb_color_converter
-import ../../src/color/hex_color
-import ../../src/color/rgb_color
-import ../../src/color/cmyk_color
+import ../../../src/converters/rgb_color_converter
+import ../../../src/color/hex_color
+import ../../../src/color/rgb_color
+import ../../../src/color/cmyk_color
 import unittest
 
 suite "check RgbColorConverter":

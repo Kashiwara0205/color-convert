@@ -1,4 +1,4 @@
-import ../../src/option/color_option
+import ../../../src/option/color_option
 import unittest
 
 suite "description for colorOption":

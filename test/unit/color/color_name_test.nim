@@ -1,4 +1,4 @@
-import ../../src/color/color_name
+import ../../../src/color/color_name
 import unittest
 
 suite "description for ColorName":

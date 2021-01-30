@@ -1,8 +1,8 @@
-import ../../src/converters/color_name_converter
-import ../../src/color/color_name
-import ../../src/color/hex_color
-import ../../src/color/rgb_color
-import ../../src/color/cmyk_color
+import ../../../src/converters/color_name_converter
+import ../../../src/color/color_name
+import ../../../src/color/hex_color
+import ../../../src/color/rgb_color
+import ../../../src/color/cmyk_color
 import unittest
 
 suite "check ColorNameConverter":

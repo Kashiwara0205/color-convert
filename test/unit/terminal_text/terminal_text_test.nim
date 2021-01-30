@@ -1,10 +1,10 @@
-import ../../src/terminal_text/terminal_text
-import ../../src/color/hex_color
-import ../../src/color/rgb_color
-import ../../src/color/cmyk_color
+import ../../../src/terminal_text/terminal_text
+import ../../../src/color/hex_color
+import ../../../src/color/rgb_color
+import ../../../src/color/cmyk_color
 import unittest
 
-suite "description for terminal text creater":
+suite "check terminal text creater":
 
   test "should create hex text":
     var hex_color = createHexColor("7B2D43")
