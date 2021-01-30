@@ -1,4 +1,6 @@
 import math
+import rgb_color_converter
+import ../color/hex_color
 import ../color/rgb_color
 import ../color/cmyk_color
 
@@ -19,3 +21,7 @@ proc toRgb*(converterObj: CmykColorConverter): RgbColor =
   let b = uint( round(255 * y_percentage * k_percentage) )
 
   return createRgb(r, g, b)
+
+proc toHex*(converterObj: CmykColorConverter): HexColor =  
+  let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
+  return rgb_color_converter.toHex()
