@@ -1,9 +1,9 @@
 import strutils
 import  math
 from strformat import fmt
-import ../color/rgb_color
-import ../color/hex_color
-import ../color/cmyk_color
+import ../values/color/rgb_color
+import ../values/color/hex_color
+import ../values/color/cmyk_color
 
 type RgbColorConverter* = object
   color: RgbColor

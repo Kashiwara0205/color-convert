@@ -1,7 +1,7 @@
 from strformat import fmt
-import ../color/cmyk_color
-import ../color/hex_color
-import ../color/rgb_color
+import ../values/color/cmyk_color
+import ../values/color/hex_color
+import ../values/color/rgb_color
 
 type TerminalText = string
 

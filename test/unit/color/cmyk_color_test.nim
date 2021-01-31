@@ -1,4 +1,4 @@
-import ../../../src/color/cmyk_color
+import ../../../src/values/color/cmyk_color
 import unittest
 
 suite "check cmykColor":

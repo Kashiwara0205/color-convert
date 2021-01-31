@@ -1,8 +1,8 @@
 import rgb_color_converter
-import ../color/color_name
-import ../color/rgb_color
-import ../color/hex_color
-import ../color/cmyk_color
+import ../values/color/color_name
+import ../values/color/rgb_color
+import ../values/color/hex_color
+import ../values/color/cmyk_color
 import ../constants/color as const_color_name
 
 type ColorNameConverter* = object

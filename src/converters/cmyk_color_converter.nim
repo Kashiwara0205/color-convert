@@ -1,8 +1,8 @@
 import math
 import rgb_color_converter
-import ../color/hex_color
-import ../color/rgb_color
-import ../color/cmyk_color
+import ../values/color/hex_color
+import ../values/color/rgb_color
+import ../values/color/cmyk_color
 
 type CmykColorConverter* = object
   color: CmykColor

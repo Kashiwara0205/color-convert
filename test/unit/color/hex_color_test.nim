@@ -1,4 +1,4 @@
-import ../../../src/color/hex_color
+import ../../../src/values/color/hex_color
 import unittest
 
 suite "description for hexColor":

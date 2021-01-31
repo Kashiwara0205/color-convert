@@ -1,4 +1,4 @@
-import ../../../src/color/rgb_color
+import ../../../src/values/color/rgb_color
 import unittest
 
 suite "description for rgbColor":

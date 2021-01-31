@@ -1,7 +1,7 @@
 import ../../../src/terminal_text/terminal_text
-import ../../../src/color/hex_color
-import ../../../src/color/rgb_color
-import ../../../src/color/cmyk_color
+import ../../../src/values/color/hex_color
+import ../../../src/values/color/rgb_color
+import ../../../src/values/color/cmyk_color
 import unittest
 
 suite "check terminal text creater":

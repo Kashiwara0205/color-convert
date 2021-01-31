@@ -8,7 +8,7 @@ import
   ../src/service/cmyk_color_service
 
 import 
-  ../src/option/color_option
+  ../src/values/option/color_option
 
 import 
   ../src/constants/option as const_option,

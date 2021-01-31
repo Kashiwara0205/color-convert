@@ -1,7 +1,7 @@
 import strutils
-import ../color/rgb_color
-import ../color/hex_color
-import ../color/cmyk_color
+import ../values/color/rgb_color
+import ../values/color/hex_color
+import ../values/color/cmyk_color
 import rgb_color_converter
 
 type HexColorConverter* = object
