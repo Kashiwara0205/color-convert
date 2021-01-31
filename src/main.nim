@@ -1,11 +1,11 @@
 import os
 
 import 
-  ../src/service/base_service,
-  ../src/service/hex_color_service,
-  ../src/service/rgb_color_service,
-  ../src/service/color_name_service,
-  ../src/service/cmyk_color_service
+  ../src/service/base_service/base_service,
+  ../src/service/hex_color_service/hex_color_service,
+  ../src/service/rgb_color_service/rgb_color_service,
+  ../src/service/color_name_service/color_name_service,
+  ../src/service/cmyk_color_service/cmyk_color_service
 
 import 
   ../src/values/option/color_option

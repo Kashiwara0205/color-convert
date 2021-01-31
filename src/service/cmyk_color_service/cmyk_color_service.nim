@@ -1,8 +1,8 @@
 import strutils
-import ./base_service
-import ../converters/cmyk_color_converter
-import ../values/color/cmyk_color
-import ../utils/terminal_text/terminal_text
+import ../base_service/base_service
+import ./cmyk_color_converter
+import ../../values/color/cmyk_color
+import ../../utils/terminal_text/terminal_text
 
 type CmykColorService* = ref object of BaseService
 

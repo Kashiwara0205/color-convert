@@ -1,8 +1,8 @@
-import ./base_service
+import ../base_service/base_service
 import strutils
-import ../converters/rgb_color_converter
-import ../values/color/rgb_color
-import ../utils/terminal_text/terminal_text
+import ./rgb_color_converter
+import ../../values/color/rgb_color
+import ../../utils/terminal_text/terminal_text
 
 type RgbColorService* = ref object of BaseService
 

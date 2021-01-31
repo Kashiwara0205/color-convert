@@ -1,4 +1,4 @@
-import ../../../src/converters/rgb_color_converter
+import ../../../src/service/rgb_color_service/rgb_color_converter
 import ../../../src/values/color/hex_color
 import ../../../src/values/color/rgb_color
 import ../../../src/values/color/cmyk_color

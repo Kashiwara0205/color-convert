@@ -1,9 +1,9 @@
-import rgb_color_converter
-import ../values/color/color_name
-import ../values/color/rgb_color
-import ../values/color/hex_color
-import ../values/color/cmyk_color
-import ../constants/color as const_color_name
+import ../rgb_color_service/rgb_color_converter
+import ../../values/color/color_name
+import ../../values/color/rgb_color
+import ../../values/color/hex_color
+import ../../values/color/cmyk_color
+import ../../constants/color as const_color_name
 
 type ColorNameConverter* = object
   color*: ColorName

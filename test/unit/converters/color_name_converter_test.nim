@@ -1,4 +1,4 @@
-import ../../../src/converters/color_name_converter
+import ../../../src/service/color_name_service/color_name_converter
 import ../../../src/values/color/color_name
 import ../../../src/values/color/hex_color
 import ../../../src/values/color/rgb_color
