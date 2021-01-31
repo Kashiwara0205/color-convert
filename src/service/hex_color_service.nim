@@ -1,7 +1,7 @@
 import ./base_service
 import ../converters/hex_color_converter
 import ../values/color/hex_color
-import ../terminal_text/terminal_text
+import ../utils/terminal_text/terminal_text
 
 type HexColorService* = ref object of BaseService
 

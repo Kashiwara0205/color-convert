@@ -1,4 +1,4 @@
-import ../../../src/terminal_text/terminal_text
+import ../../../src/utils/terminal_text/terminal_text
 import ../../../src/values/color/hex_color
 import ../../../src/values/color/rgb_color
 import ../../../src/values/color/cmyk_color

@@ -1,7 +1,7 @@
 import ./base_service
 import ../converters/color_name_converter
 import ../values/color/color_name
-import ../terminal_text/terminal_text
+import ../utils/terminal_text/terminal_text
 
 type ColorNameService* = ref object of BaseService
 
