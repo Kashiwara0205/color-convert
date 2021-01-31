@@ -4,16 +4,16 @@ import ../../values/color/hex_color
 import ../../values/color/cmyk_color
 import ../rgb_color_service/rgb_color_converter
 
-type HexColorConverter* = object
-  color: HexColor
+type HexCollorConverter* = object
+  color: HexCollor
 
-func createHexColorConverter*(color: HexColor): HexColorConverter =
-  return HexColorConverter(color: color)
+func createHexCollorConverter*(color: HexCollor): HexCollorConverter =
+  return HexCollorConverter(color: color)
 
-proc toHex*(converterObj: HexColorConverter): HexColor = 
+proc toHex*(converterObj: HexCollorConverter): HexCollor = 
   return converterObj.color
 
-proc toRgb*(converterObj: HexColorConverter): RgbColor = 
+proc toRgb*(converterObj: HexCollorConverter): RgbColor = 
   let color = converterObj.color.getColor
   let r = color[0] & color[1]
   let g = color[2] & color[3]
@@ -21,6 +21,6 @@ proc toRgb*(converterObj: HexColorConverter): RgbColor =
 
   return createRgb(fromHex[uint](r), fromHex[uint](g), fromHex[uint](b))
 
-proc toCmyk*(converterObj: HexColorConverter): CmykColor  =  
+proc toCmyk*(converterObj: HexCollorConverter): CmykColor  =  
   let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
   return rgb_color_converter.toCmyk()

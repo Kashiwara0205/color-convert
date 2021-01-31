@@ -12,14 +12,15 @@ import
 
 import 
   ../src/constants/option as const_option,
-  ../src/constants/instructions
+  ../src/constants/instructions,
+  ../src/utils/terminal_text/terminal_text
 
 proc notEnoughParamCount():bool = return paramCount() == 0 or paramCount() == 1
 
 proc createColorConvertService(option: ColorOption): BaseService = 
   case option.input
   of I_OPTION_HEX:
-    return HexColorService()
+    return HexCollorService()
   of I_OPTION_RGB:
     return RgbColorService()
   of I_OPTION_COLOR:
@@ -27,16 +28,17 @@ proc createColorConvertService(option: ColorOption): BaseService =
   of I_OPTION_CMYK:
     return CmykColorService()
 
-proc convert(option: ColorOption): void = 
+proc convert(option: ColorOption): void =
   try:
-    let service = createColorConvertService(option)
+    let terminal_text_creater = TerminalTextCreater()
+    let convert_service = createColorConvertService(option)
     case option.output:
     of O_OPTION_HEX:
-      service.toHex(option.colorValue)
+      echo terminal_text_creater.createHexText( convert_service.toHex(option.colorValue) )
     of O_OPTION_RGB:
-      service.toRgb(option.colorValue)
+      echo terminal_text_creater.createRgbText( convert_service.toRgb(option.colorValue) )
     of O_OPTION_CMYK:
-      service.toCmyk(option.colorValue)
+      echo terminal_text_creater.createCmykText( convert_service.toCmyk(option.colorValue) )
   except:
     echo getCurrentExceptionMsg()
 

@@ -2,39 +2,27 @@ import strutils
 import ../base_service/base_service
 import ./cmyk_color_converter
 import ../../values/color/cmyk_color
-import ../../utils/terminal_text/terminal_text
+import ../../values/color/hex_color
+import ../../values/color/rgb_color
 
 type CmykColorService* = ref object of BaseService
 
-method toHex*(service: CmykColorService, color_value: string): void =
+proc createConverter(color_value: string): CmykColorConverter =
   let cmyk_values = color_value.split(",")
   var cmyk = 
     createCmykColor(cmyk_values[0].parseUInt, cmyk_values[1].parseUInt, 
                     cmyk_values[2].parseUInt, cmyk_values[3].parseUInt)
 
-  let color_converter = createCmykColorConverter(cmyk)
+  return createCmykColorConverter(cmyk)
 
-  var textCreater = TerminalTextCreater()
-  echo textCreater.createHexText(color_converter.toHex())
+method toHex*(service: CmykColorService, color_value: string): HexCollor =
+  let cmyk_color_converter = createConverter(color_value)
+  return cmyk_color_converter.toHex()
 
-method toRgb*(service: CmykColorService, color_value: string): void =
-  let cmyk_values = color_value.split(",")
-  var cmyk = 
-    createCmykColor(cmyk_values[0].parseUInt, cmyk_values[1].parseUInt, 
-                    cmyk_values[2].parseUInt, cmyk_values[3].parseUInt)
+method toRgb*(service: CmykColorService, color_value: string): RgbColor =
+  let cmyk_color_converter = createConverter(color_value)
+  return cmyk_color_converter.toRgb()
 
-  let color_converter = createCmykColorConverter(cmyk)
-
-  var textCreater = TerminalTextCreater()
-  echo textCreater.createRgbText(color_converter.toRgb())
-
-method toCmyk*(service: CmykColorService, color_value: string): void =
-  let cmyk_values = color_value.split(",")
-  var cmyk = 
-    createCmykColor(cmyk_values[0].parseUInt, cmyk_values[1].parseUInt, 
-                    cmyk_values[2].parseUInt, cmyk_values[3].parseUInt)
-
-  let color_converter = createCmykColorConverter(cmyk)
-
-  var textCreater = TerminalTextCreater()
-  echo textCreater.createCmykText(color_converter.toCmyk())
+method toCmyk*(service: CmykColorService, color_value: string): CmykColor =
+  let cmyk_color_converter = createConverter(color_value)
+  return cmyk_color_converter.toCmyk()

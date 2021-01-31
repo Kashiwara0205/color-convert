@@ -1,27 +1,24 @@
 import ../base_service/base_service
 import ./color_name_converter
 import ../../values/color/color_name
-import ../../utils/terminal_text/terminal_text
+import ../../values/color/cmyk_color
+import ../../values/color/hex_color
+import ../../values/color/rgb_color
+import ./color_name_converter
 
 type ColorNameService* = ref object of BaseService
 
-method toHex*(service: ColorNameService, color_name: string): void =
-  var colorConverter = 
-    createColorNameConverter(createColorName(color_name))
+proc createConverter(color_value: string): ColorNameConverter =
+  return createColorNameConverter(createColorName(color_value))
 
-  var textCreater = TerminalTextCreater()
-  echo textCreater.createHexText(colorConverter.toHex())
+method toHex*(service: ColorNameService, color_name: string): HexCollor =
+  var color_name_converter =  createConverter(color_name)
+  return color_name_converter.toHex()
 
-method toRgb*(service: ColorNameService, color_name: string): void =
-  var colorConverter = 
-    createColorNameConverter(createColorName(color_name))
+method toRgb*(service: ColorNameService, color_name: string): RgbColor =
+  var color_name_converter =  createConverter(color_name)
+  return color_name_converter.toRgb()
 
-  var textCreater = TerminalTextCreater()
-  echo textCreater.createRgbText(colorConverter.toRgb())
-
-method toCmyk*(service: ColorNameService, color_name: string): void =
-  var colorConverter = 
-    createColorNameConverter(createColorName(color_name))
-
-  var textCreater = TerminalTextCreater()
-  echo textCreater.createCmykText(colorConverter.toCmyk())
+method toCmyk*(service: ColorNameService, color_name: string): CmykColor =
+  var color_name_converter =  createConverter(color_name)
+  return color_name_converter.toCmyk()

@@ -25,6 +25,6 @@ proc toRgb*(converterObj: CmykColorConverter): RgbColor =
 proc toCmyk*(converterObj: CmykColorConverter): CmykColor = 
   return converterObj.color
 
-proc toHex*(converterObj: CmykColorConverter): HexColor =  
+proc toHex*(converterObj: CmykColorConverter): HexCollor =  
   let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
   return rgb_color_converter.toHex()

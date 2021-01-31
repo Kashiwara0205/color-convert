@@ -11,12 +11,12 @@ type RgbColorConverter* = object
 func createRgbColorConverter*(color: RgbColor): RgbColorConverter =
   return RgbColorConverter(color: color)
 
-proc toHex*(converterObj: RgbColorConverter): HexColor =  
+proc toHex*(converterObj: RgbColorConverter): HexCollor =  
   let r = converterObj.color.getRedColor().toHex(2)
   let g = converterObj.color.getGreenColor().toHex(2)
   let b = converterObj.color.getBlueColor().toHex(2)
   
-  return createHexColor(fmt"{r}{g}{b}")
+  return createHexCollor(fmt"{r}{g}{b}")
 
 proc toCmyk*(converterObj: RgbColorConverter): CmykColor =  
   let r = converterObj.color.getRedColor()

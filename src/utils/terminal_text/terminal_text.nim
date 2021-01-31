@@ -7,7 +7,7 @@ type TerminalText = string
 
 type TerminalTextCreater* = object
 
-proc createHexText*(creater: TerminalTextCreater, color: HexColor): TerminalText =
+proc createHexText*(creater: TerminalTextCreater, color: HexCollor): TerminalText =
   let hex_color = color.getColor()
   let terminal_text: TerminalText = fmt"[ { hex_color } ]"
 

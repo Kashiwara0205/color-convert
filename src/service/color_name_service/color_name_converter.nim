@@ -20,7 +20,7 @@ proc toRgb*(converterObj: ColorNameConverter): RgbColor =
   of BLACK: return createRgb(BLACK_RGB[0], BLACK_RGB[1], BLACK_RGB[2])
   of WHITE: return createRgb(WHITE_RGB[0], WHITE_RGB[1], WHITE_RGB[2])
 
-proc toHex*(converterObj: ColorNameConverter): HexColor = 
+proc toHex*(converterObj: ColorNameConverter): HexCollor = 
   case converterObj.color.getColorName:
   of RED: return createRgbColorConverter(createRgb(RED_RGB[0], RED_RGB[1], RED_RGB[2])).toHex
   of GREEN: return createRgbColorConverter(createRgb(GREEN_RGB[0], GREEN_RGB[1], GREEN_RGB[2])).toHex
