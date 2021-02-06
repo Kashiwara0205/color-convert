@@ -13,7 +13,8 @@ build:
 	nim c -o:test_result/color_option_test -r test/unit/option/color_option_test.nim
 
 	nim c -o:test_result/inputted_cmyk_test -r test/unit/inputted_value/inputted_cmyk_test.nim
-	
+	nim c -o:test_result/inputted_rgb_test -r test/unit/inputted_value/inputted_rgb_test.nim
+
 	nim c -o:bin/color_convert src/main.nim
 
 	sh test/system/test.sh

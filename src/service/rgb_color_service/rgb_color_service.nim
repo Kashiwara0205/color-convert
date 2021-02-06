@@ -5,11 +5,14 @@ import ../../values/color/rgb_color
 import ../../values/color/cmyk_color
 import ../../values/color/hex_color
 import ../../values/color/rgb_color
+import ../../values/inputted_value/inputted_rgb
 
 type RgbColorService* = ref object of BaseService
 
 proc createConverter(color_value: string): RgbColorConverter =
-  let rgb_values = color_value.split(",")
+  let inputted_rgb = createInputtedRgb(color_value)
+  let rgb_values = inputted_rgb.getInputValue()
+
   var color = createRgb(rgb_values[0].parseUInt, rgb_values[1].parseUInt, rgb_values[2].parseUInt)
   var colorConverter = createRgbColorConverter(color)
 

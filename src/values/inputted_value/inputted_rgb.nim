@@ -3,15 +3,15 @@ import strutils
 proc valudInputCmyk(value: string) =
   let cmyk_value = value.split(",")
 
-  if cmyk_value.len != 4:
+  if cmyk_value.len != 3:
     raise Exception.newException("Not enough arguments") 
 
-type InputtedCmyk* = object
+type InputtedRgb* = object
   value: seq[string]
 
-proc getInputValue*(inputed: InputtedCmyk): seq[string] =
+proc getInputValue*(inputed: InputtedRgb): seq[string] =
   return inputed.value
 
-proc createInputtedCmyk*(value: string): InputtedCmyk = 
+proc createInputtedRgb*(value: string): InputtedRgb = 
   valudInputCmyk(value)
-  return InputtedCmyk(value: value.split(",") )
+  return InputtedRgb(value: value.split(",") )
