@@ -20,6 +20,16 @@ checkExecutetion () {
 }
 
 # check 
+dispTitle "Disp introduction"
+./bin/color_convert --iRgb:90,45,67 > /dev/null 2>&1
+checkExecutetion "wrong argument number(--iRgb:90,45,67)" 
+
+./bin/color_convert > /dev/null 2>&1
+checkExecutetion "wrong argument number()" 
+
+./bin/color_convert --iRgb:90, 45, 67,30 --oRgb > /dev/null 2>&1
+checkExecutetion "wrong argument number(--iRgb:90, 45, 67,30 --oRgb)" 
+
 dispTitle "RgbConvert"
 
 ./bin/color_convert --iRgb:90,45,67 --oCmyk > /dev/null 2>&1

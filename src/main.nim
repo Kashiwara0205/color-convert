@@ -15,7 +15,7 @@ import
   ../src/constants/instructions,
   ../src/utils/terminal_text/terminal_text
 
-proc notEnoughParamCount():bool = return paramCount() == 0 or paramCount() == 1
+proc notEnoughParamCount():bool = return paramCount() != 2
 
 proc createColorConvertService(option: ColorOption): BaseService = 
   case option.input
