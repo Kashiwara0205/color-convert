@@ -2,6 +2,7 @@ from strformat import fmt
 import ../../values/color/cmyk_color
 import ../../values/color/hex_color
 import ../../values/color/rgb_color
+import ../../values/color/hsl_color
 
 type TerminalText = string
 
@@ -29,5 +30,14 @@ proc createCmykText*(creater:TerminalTextCreater, color: CmykColor): TerminalTex
   let black = color.getBlackColor()
 
   let terminal_text: TerminalText = fmt"[ C: { cyan }% M: { magenda }% Y: { yellow }% B: { black }% ]"
+
+  return terminal_text
+
+proc createHslText*(creater:TerminalTextCreater, color: HslCOlor): TerminalText =
+  let h = color.getH()
+  let s = color.getS()
+  let L = color.getL()
+
+  let terminal_text: TerminalText = fmt"[ H: { h }° S: { s }% L: { L }% ]"
 
   return terminal_text

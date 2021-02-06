@@ -2,6 +2,8 @@ import ../../../src/utils/terminal_text/terminal_text
 import ../../../src/values/color/hex_color
 import ../../../src/values/color/rgb_color
 import ../../../src/values/color/cmyk_color
+import ../../../src/values/color/hsl_color
+
 import unittest
 
 suite "check terminal text creater":
@@ -20,3 +22,8 @@ suite "check terminal text creater":
     let cmyk = createCmykColor(1, 2, 3, 4)
     var creater = TerminalTextCreater()
     check "[ C: 1% M: 2% Y: 3% B: 4% ]" == creater.createCmykText(cmyk)
+
+  test "should create hsl text":
+    let hsl = createHslColor(1,2,3)
+    var creater = TerminalTextCreater()
+    check "[ H: 1° S: 2% L: 3% ]" == creater.createHslText(hsl)
