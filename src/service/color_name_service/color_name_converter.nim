@@ -8,7 +8,7 @@ import ../../constants/color as const_color_name
 type ColorNameConverter* = object
   color*: ColorName
 
-func createColorNameConverter*(color: ColorName): ColorNameConverter =
+proc createColorNameConverter*(color: ColorName): ColorNameConverter =
   return ColorNameConverter(color: color)
 
 proc toRgb*(converterObj: ColorNameConverter): RgbColor = 

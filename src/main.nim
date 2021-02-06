@@ -28,8 +28,9 @@ proc createColorConvertService(option: ColorOption): BaseService =
   of I_OPTION_CMYK:
     return CmykColorService()
 
-proc convert(option: ColorOption): void =
+proc convert(input_color_option: string, output_color_option: string): void =
   try:
+    let option = createColorOption(input_color_option, output_color_option)
     let terminal_text_creater = TerminalTextCreater()
     let convert_service = createColorConvertService(option)
     case option.output:
@@ -46,8 +47,6 @@ proc main(): void =
   if notEnoughParamCount():
     echo INSTRUCTIONS
     system.quit(QuitSuccess)
-
-  let option = createColorOption(paramStr(1), paramStr(2))
-  convert(option)
+  convert(paramStr(1), paramStr(2))
 
 main()

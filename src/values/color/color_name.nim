@@ -4,5 +4,5 @@ type ColorName* =  ref object of RootObj
 proc getColorName*(color: ColorName): string = 
   return color.name
 
-func createColorName*(name: string): ColorName = 
+proc createColorName*(name: string): ColorName = 
   return ColorName(name: name)

@@ -7,7 +7,7 @@ import ../rgb_color_service/rgb_color_converter
 type HexCollorConverter* = object
   color: HexCollor
 
-func createHexCollorConverter*(color: HexCollor): HexCollorConverter =
+proc createHexCollorConverter*(color: HexCollor): HexCollorConverter =
   return HexCollorConverter(color: color)
 
 proc toHex*(converterObj: HexCollorConverter): HexCollor = 
