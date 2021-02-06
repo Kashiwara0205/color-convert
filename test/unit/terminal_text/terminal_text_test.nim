@@ -26,4 +26,4 @@ suite "check terminal text creater":
   test "should create hsl text":
     let hsl = createHslColor(1,2,3)
     var creater = TerminalTextCreater()
-    check "[ H: 1° S: 2% L: 3% ]" == creater.createHslText(hsl)
+    check "[ H: 1° S: 2.0% L: 3.0% ]" == creater.createHslText(hsl)

@@ -1,13 +1,13 @@
 type HslColor* = object
   h*: uint
-  s*: uint
-  L*: uint # Nim warning " 'l' should not be used as an identifier; may look like '1' (one)  "
+  s*: float
+  L*: float # Nim warning " 'l' should not be used as an identifier; may look like '1' (one)  "
 
 proc getH*(hsl: HslColor): uint = hsl.h
 
-proc getS*(hsl: HslColor): uint = hsl.s
+proc getS*(hsl: HslColor): float = hsl.s
 
-proc getL*(hsl: HslColor): uint = hsl.L
+proc getL*(hsl: HslColor): float = hsl.L
 
-proc createHslColor*(h: uint, s: uint, L: uint): HslColor = 
+proc createHslColor*(h: uint, s: float, L: float): HslColor = 
   return HslColor(h: h, s: s, L: L)
