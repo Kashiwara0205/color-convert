@@ -15,8 +15,8 @@ proc createConverter(color_value: string): CmykColorConverter =
   let cmyk_values = inputted_cmyk.getInputValue()
   
   var cmyk = 
-    createCmykColor(cmyk_values[0].parseUInt, cmyk_values[1].parseUInt, 
-                    cmyk_values[2].parseUInt, cmyk_values[3].parseUInt)
+    createCmykColor(cmyk_values[0].parseFloat, cmyk_values[1].parseFloat, 
+                    cmyk_values[2].parseFloat, cmyk_values[3].parseFloat)
 
   return createCmykColorConverter(cmyk)
 

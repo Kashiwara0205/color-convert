@@ -21,7 +21,7 @@ suite "check terminal text creater":
   test "should create cmyk text":
     let cmyk = createCmykColor(1, 2, 3, 4)
     var creater = TerminalTextCreater()
-    check "[ C: 1% M: 2% Y: 3% B: 4% ]" == creater.createCmykText(cmyk)
+    check "[ C: 1.0% M: 2.0% Y: 3.0% B: 4.0% ]" == creater.createCmykText(cmyk)
 
   test "should create hsl text":
     let hsl = createHslColor(1,2,3)
