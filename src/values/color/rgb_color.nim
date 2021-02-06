@@ -9,5 +9,5 @@ proc getGreenColor*(rgb: RgbColor): uint = rgb.g
 
 proc getBlueColor*(rgb: RgbColor): uint =  rgb.b
 
-func createRgb*(r: uint, g: uint, b:uint): RgbColor = 
+proc createRgb*(r: uint, g: uint, b:uint): RgbColor = 
   return RgbColor(r: r, g: g, b: b)
