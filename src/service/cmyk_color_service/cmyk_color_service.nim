@@ -4,11 +4,16 @@ import ./cmyk_color_converter
 import ../../values/color/cmyk_color
 import ../../values/color/hex_color
 import ../../values/color/rgb_color
+import ../../values/inputted_value/inputted_cmyk
+
+{.warning[LockLevel]:off.}
 
 type CmykColorService* = ref object of BaseService
 
 proc createConverter(color_value: string): CmykColorConverter =
-  let cmyk_values = color_value.split(",")
+  let inputted_cmyk = createInputtedCmyk(color_value)
+  let cmyk_values = inputted_cmyk.getInputValue()
+  
   var cmyk = 
     createCmykColor(cmyk_values[0].parseUInt, cmyk_values[1].parseUInt, 
                     cmyk_values[2].parseUInt, cmyk_values[3].parseUInt)

@@ -8,7 +8,7 @@ import ../../values/color/cmyk_color
 type RgbColorConverter* = object
   color: RgbColor
 
-func createRgbColorConverter*(color: RgbColor): RgbColorConverter =
+proc createRgbColorConverter*(color: RgbColor): RgbColorConverter =
   return RgbColorConverter(color: color)
 
 proc toHex*(converterObj: RgbColorConverter): HexCollor =  

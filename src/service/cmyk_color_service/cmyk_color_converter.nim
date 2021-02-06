@@ -7,7 +7,7 @@ import ../../values/color/cmyk_color
 type CmykColorConverter* = object
   color: CmykColor
 
-func createCmykColorConverter*(color: CmykColor): CmykColorConverter =
+proc createCmykColorConverter*(color: CmykColor): CmykColorConverter =
   return CmykColorConverter(color: color)
 
 proc toRgb*(converterObj: CmykColorConverter): RgbColor = 

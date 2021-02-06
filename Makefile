@@ -12,9 +12,11 @@ build:
 	nim c -o:test_result/terminal_text_test -r test/unit/terminal_text/terminal_text_test.nim
 	nim c -o:test_result/color_option_test -r test/unit/option/color_option_test.nim
 
-	sh test/system/test.sh
-
+	nim c -o:test_result/inputted_cmyk_test -r test/unit/inputted_value/inputted_cmyk_test.nim
+	
 	nim c -o:bin/color_convert src/main.nim
+
+	sh test/system/test.sh
 
 cmyk_color_converter_test:
 	nim c -o:test_result/cmyk_color_converter_test -r test/unit/converters/cmyk_color_converter_test.nim
