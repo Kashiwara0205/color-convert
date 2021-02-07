@@ -42,6 +42,9 @@ checkExecutetion "Rgb to Hex"
 ./bin/color_convert --iRgb:90,45,67 --oRgb > /dev/null 2>&1
 checkExecutetion "Rgb to Rgb" 
 
+./bin/color_convert --iRgb:90,45,67 --oHsl > /dev/null 2>&1
+checkExecutetion "Rgb to Hsl" 
+
 dispTitle "HexConvert"
 ./bin/color_convert --iHex:"FFFFFF" --oCmyk >/dev/null 2>&1
 checkExecutetion "Hex to Cmyk" 
@@ -51,6 +54,9 @@ checkExecutetion "Hex to Hex"
 
 ./bin/color_convert --iHex:"FFFFFF" --oRgb > /dev/null 2>&1
 checkExecutetion "Hex to Rgb" 
+
+./bin/color_convert --iHex:"FFFFFF" --oHsl > /dev/null 2>&1
+checkExecutetion "Hex to Hsl" 
 
 dispTitle "ColorNameConvert"
 ./bin/color_convert --iColor:Red --oCmyk > /dev/null 2>&1
@@ -62,6 +68,9 @@ checkExecutetion "Color:Red to Hex"
 ./bin/color_convert --iColor:Red --oRgb > /dev/null 2>&1
 checkExecutetion "Color:Red to Rgb" 
 
+./bin/color_convert --iColor:Red --oHsl > /dev/null 2>&1
+checkExecutetion "Color:Red to Hsl" 
+
 dispTitle "CmykConvert"
 ./bin/color_convert --iCmyk:2,2,2,2 --oCmyk > /dev/null 2>&1
 checkExecutetion "Cmyk to Cmyk" 
@@ -71,3 +80,6 @@ checkExecutetion "Cmyk to Hex"
 
 ./bin/color_convert --iCmyk:2,2,2,2 --oRgb > /dev/null 2>&1
 checkExecutetion "Cmyk to Rgb" 
+
+./bin/color_convert --iCmyk:2,2,2,2 --oHsl > /dev/null 2>&1
+checkExecutetion "Cmyk to Hsl" 

@@ -40,6 +40,8 @@ proc convert(input_color_option: string, output_color_option: string): void =
       echo terminal_text_creater.createRgbText( convert_service.toRgb(option.colorValue) )
     of O_OPTION_CMYK:
       echo terminal_text_creater.createCmykText( convert_service.toCmyk(option.colorValue) )
+    of O_OPTION_HSL:
+      echo terminal_text_creater.createHslText( convert_service.toHsl(option.colorValue) )
   except:
     echo getCurrentExceptionMsg()
 
