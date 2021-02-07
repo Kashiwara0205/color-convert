@@ -35,8 +35,7 @@ proc toCmyk*(converterObj: RgbColorConverter): CmykColor =
   let m = if k == 1: 1.0 else: (1 - g_dush - k) / (1 - k)
   let y = if k == 1: 1.0 else: (1 - b_dush - k) / (1 - k)
 
-  return createCmykColor(round(c * 100), round(m * 100), 
-                         round(y * 100), round(k * 100))
+  return createCmykColor(round(c, 2), round(m, 2), round(y, 2), round(k, 2))
 
 proc toRgb*(converterObj: RgbColorConverter): RgbColor = 
   return converterObj.color

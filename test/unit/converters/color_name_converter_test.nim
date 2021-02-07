@@ -66,33 +66,33 @@ suite "check ColorNameConverter":
   test "should convert to cmyk":
     var colorNameConverter = createColorNameConverter(createColorName("Red"))
     check 0 == colorNameConverter.toCmyk.getCyanColor
-    check 100 == colorNameConverter.toCmyk.getMagentaColor
-    check 100 == colorNameConverter.toCmyk.getYellowColor
+    check 1 == colorNameConverter.toCmyk.getMagentaColor
+    check 1 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("Green"))
-    check 100 == colorNameConverter.toCmyk.getCyanColor
+    check 1 == colorNameConverter.toCmyk.getCyanColor
     check 0 == colorNameConverter.toCmyk.getMagentaColor
-    check 100 == colorNameConverter.toCmyk.getYellowColor
+    check 1 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
   
     colorNameConverter = createColorNameConverter(createColorName("Blue"))
-    check 100 == colorNameConverter.toCmyk.getCyanColor
-    check 100 == colorNameConverter.toCmyk.getMagentaColor
+    check 1 == colorNameConverter.toCmyk.getCyanColor
+    check 1 == colorNameConverter.toCmyk.getMagentaColor
     check 0 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("Yellow"))
     check 0 == colorNameConverter.toCmyk.getCyanColor
     check 0 == colorNameConverter.toCmyk.getMagentaColor
-    check 100 == colorNameConverter.toCmyk.getYellowColor
+    check 1 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("Black"))
-    check 100 == colorNameConverter.toCmyk.getCyanColor
-    check 100 == colorNameConverter.toCmyk.getMagentaColor
-    check 100 == colorNameConverter.toCmyk.getYellowColor
-    check 100 == colorNameConverter.toCmyk.getBlackColor
+    check 1 == colorNameConverter.toCmyk.getCyanColor
+    check 1 == colorNameConverter.toCmyk.getMagentaColor
+    check 1 == colorNameConverter.toCmyk.getYellowColor
+    check 1 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("White"))
     check 0 == colorNameConverter.toCmyk.getCyanColor

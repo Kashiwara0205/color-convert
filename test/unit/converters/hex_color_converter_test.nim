@@ -25,9 +25,9 @@ suite "check HexCollorConverter":
     var cmyk = HexCollorConverter.toCmyk()
 
     check 0 == cmyk.getCyanColor
-    check 63 == cmyk.getMagentaColor
-    check 46 == cmyk.getYellowColor
-    check 52 == cmyk.getBlackColor
+    check 0.63 == cmyk.getMagentaColor
+    check 0.46 == cmyk.getYellowColor
+    check 0.52 == cmyk.getBlackColor
 
     HexCollor = createHexCollor("FFFFFF")
     HexCollorConverter = createHexCollorConverter(HexCollor)
@@ -42,7 +42,7 @@ suite "check HexCollorConverter":
     HexCollorConverter = createHexCollorConverter(HexCollor)
 
     cmyk = HexCollorConverter.toCmyk()
-    check 100 == cmyk.getCyanColor
-    check 100 == cmyk.getMagentaColor
-    check 100 == cmyk.getYellowColor
-    check 100 == cmyk.getBlackColor
+    check 1 == cmyk.getCyanColor
+    check 1 == cmyk.getMagentaColor
+    check 1 == cmyk.getYellowColor
+    check 1 == cmyk.getBlackColor
