@@ -3,6 +3,8 @@ import ../../../src/values/color/color_name
 import ../../../src/values/color/hex_color
 import ../../../src/values/color/rgb_color
 import ../../../src/values/color/cmyk_color
+import ../../../src/values/color/hsl_color
+
 import unittest
 
 suite "check ColorNameConverter":
@@ -10,39 +12,39 @@ suite "check ColorNameConverter":
   test "should convert to rgb":
     var colorNameConverter = createColorNameConverter(createColorName("Red"))
     var rgb = colorNameConverter.toRgb
-    check 255 == rgb.getRedColor
-    check 0 == rgb.getGreenColor
-    check 0 == rgb.getBlueColor
+    check uint(255) == rgb.getRedColor
+    check uint(0) == rgb.getGreenColor
+    check uint(0) == rgb.getBlueColor
 
     colorNameConverter = createColorNameConverter(createColorName("Green"))
     rgb = colorNameConverter.toRgb
-    check 0 == rgb.getRedColor
-    check 255 == rgb.getGreenColor
-    check 0 == rgb.getBlueColor
+    check uint(0) == rgb.getRedColor
+    check uint(255) == rgb.getGreenColor
+    check uint(0) == rgb.getBlueColor
 
     colorNameConverter = createColorNameConverter(createColorName("Blue"))
     rgb = colorNameConverter.toRgb
-    check 0 == rgb.getRedColor
-    check 0 == rgb.getGreenColor
-    check 255 == rgb.getBlueColor
+    check uint(0) == rgb.getRedColor
+    check uint(0) == rgb.getGreenColor
+    check uint(255) == rgb.getBlueColor
 
     colorNameConverter = createColorNameConverter(createColorName("Yellow"))
     rgb = colorNameConverter.toRgb
-    check 255 == rgb.getRedColor
-    check 255 == rgb.getGreenColor
-    check 0 == rgb.getBlueColor
+    check uint(255) == rgb.getRedColor
+    check uint(255) == rgb.getGreenColor
+    check uint(0) == rgb.getBlueColor
 
     colorNameConverter = createColorNameConverter(createColorName("Black"))
     rgb = colorNameConverter.toRgb
-    check 0 == rgb.getRedColor
-    check 0 == rgb.getGreenColor
-    check 0 == rgb.getBlueColor
+    check uint(0) == rgb.getRedColor
+    check uint(0) == rgb.getGreenColor
+    check uint(0) == rgb.getBlueColor
 
     colorNameConverter = createColorNameConverter(createColorName("White"))
     rgb = colorNameConverter.toRgb
-    check 255 == rgb.getRedColor
-    check 255 == rgb.getGreenColor
-    check 255 == rgb.getBlueColor
+    check uint(255) == rgb.getRedColor
+    check uint(255) == rgb.getGreenColor
+    check uint(255) == rgb.getBlueColor
 
   test "should convert to hex":
     var colorNameConverter = createColorNameConverter(createColorName("Red"))
@@ -99,3 +101,34 @@ suite "check ColorNameConverter":
     check 0 == colorNameConverter.toCmyk.getMagentaColor
     check 0 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
+
+  test "should convert to hsl":
+    var colorNameConverter = createColorNameConverter(createColorName("Red"))
+    check uint(0) == colorNameConverter.toHsl.getH
+    check 1 == colorNameConverter.toHsl.getS
+    check 0.5 == colorNameConverter.toHsl.getL
+
+    colorNameConverter = createColorNameConverter(createColorName("Green"))
+    check uint(120) == colorNameConverter.toHsl.getH
+    check 1 == colorNameConverter.toHsl.getS
+    check 0.5 == colorNameConverter.toHsl.getL
+  
+    colorNameConverter = createColorNameConverter(createColorName("Blue"))
+    check uint(240) == colorNameConverter.toHsl.getH
+    check 1 == colorNameConverter.toHsl.getS
+    check 0.5 == colorNameConverter.toHsl.getL
+
+    colorNameConverter = createColorNameConverter(createColorName("Yellow"))
+    check uint(60) == colorNameConverter.toHsl.getH
+    check 1 == colorNameConverter.toHsl.getS
+    check 0.5 == colorNameConverter.toHsl.getL
+
+    colorNameConverter = createColorNameConverter(createColorName("Black"))
+    check uint(0) == colorNameConverter.toHsl.getH
+    check 0 == colorNameConverter.toHsl.getS
+    check 0 == colorNameConverter.toHsl.getL
+
+    colorNameConverter = createColorNameConverter(createColorName("White"))
+    check uint(0) == colorNameConverter.toHsl.getH
+    check 0 == colorNameConverter.toHsl.getS
+    check 1 == colorNameConverter.toHsl.getL

@@ -2,6 +2,8 @@ import ../../../src/service/hex_color_service/hex_color_converter
 import ../../../src/values/color/hex_color
 import ../../../src/values/color/rgb_color
 import ../../../src/values/color/cmyk_color
+import ../../../src/values/color/hsl_color
+
 import unittest
 
 suite "check HexCollorConverter":
@@ -10,9 +12,9 @@ suite "check HexCollorConverter":
     var HexCollor = createHexCollor("7B2D43")
     var HexCollorConverter = createHexCollorConverter(HexCollor)
     var rgb = HexCollorConverter.toRgb
-    check 123 == rgb.getRedColor
-    check 45 == rgb.getGreenColor
-    check 67 == rgb.getBlueColor
+    check uint(123) == rgb.getRedColor
+    check uint(45) == rgb.getGreenColor
+    check uint(67) == rgb.getBlueColor
 
   test "should convert to hex":
     var HexCollor = createHexCollor("7B2D43")
@@ -46,3 +48,28 @@ suite "check HexCollorConverter":
     check 1 == cmyk.getMagentaColor
     check 1 == cmyk.getYellowColor
     check 1 == cmyk.getBlackColor
+
+  test "should convert to hsl":
+    var HexCollor = createHexCollor("7B2D43")
+    var HexCollorConverter = createHexCollorConverter(HexCollor)
+    var hsl = HexCollorConverter.toHsl()
+
+    check uint(343) == hsl.getH
+    check 0.464 == hsl.getS
+    check 0.329 == hsl.getL
+
+    HexCollor = createHexCollor("FFFFFF")
+    HexCollorConverter = createHexCollorConverter(HexCollor)
+    hsl = HexCollorConverter.toHsl()
+
+    check uint(0) == hsl.getH
+    check 0 == hsl.getS
+    check 1 == hsl.getL
+
+    HexCollor = createHexCollor("000000")
+    HexCollorConverter = createHexCollorConverter(HexCollor)
+    hsl = HexCollorConverter.toHsl()
+
+    check uint(0) == hsl.getH
+    check 0 == hsl.getS
+    check 0 == hsl.getL

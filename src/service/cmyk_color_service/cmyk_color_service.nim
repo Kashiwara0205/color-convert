@@ -4,6 +4,7 @@ import ./cmyk_color_converter
 import ../../values/color/cmyk_color
 import ../../values/color/hex_color
 import ../../values/color/rgb_color
+import ../../values/color/hsl_color
 import ../../values/inputted_value/inputted_cmyk
 
 {.warning[LockLevel]:off.}
@@ -31,3 +32,7 @@ method toRgb*(service: CmykColorService, color_value: string): RgbColor =
 method toCmyk*(service: CmykColorService, color_value: string): CmykColor =
   let cmyk_color_converter = createConverter(color_value)
   return cmyk_color_converter.toCmyk()
+
+method toHsl*(service: CmykColorService, color_value: string): HslColor =
+  let cmyk_color_converter = createConverter(color_value)
+  return cmyk_color_converter.toHsl()

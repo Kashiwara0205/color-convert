@@ -3,6 +3,7 @@ import ./hex_color_converter
 import ../../values/color/cmyk_color
 import ../../values/color/hex_color
 import ../../values/color/rgb_color
+import ../../values/color/hsl_color
 
 type HexCollorService* = ref object of BaseService
 
@@ -21,3 +22,7 @@ method toRgb*(service: HexCollorService, hex_color_text: string): RgbColor =
 method toCmyk*(service: HexCollorService, hex_color_text: string): CmykColor =
   var hex_color_converter = createConverter(hex_color_text)
   return hex_color_converter.toCmyk()
+
+method toHsl*(service: HexCollorService, hex_color_text: string): HslColor =
+  var hex_color_converter = createConverter(hex_color_text)
+  return hex_color_converter.toHsl()

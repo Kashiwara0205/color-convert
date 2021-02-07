@@ -4,6 +4,7 @@ import ../../values/color/color_name
 import ../../values/color/cmyk_color
 import ../../values/color/hex_color
 import ../../values/color/rgb_color
+import ../../values/color/hsl_color
 import ./color_name_converter
 
 type ColorNameService* = ref object of BaseService
@@ -22,3 +23,7 @@ method toRgb*(service: ColorNameService, color_name: string): RgbColor =
 method toCmyk*(service: ColorNameService, color_name: string): CmykColor =
   var color_name_converter =  createConverter(color_name)
   return color_name_converter.toCmyk()
+
+method toHsl*(service: ColorNameService, color_name: string): HslColor =
+  var color_name_converter =  createConverter(color_name)
+  return color_name_converter.toHsl()

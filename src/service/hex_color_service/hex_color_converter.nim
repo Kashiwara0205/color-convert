@@ -2,6 +2,7 @@ import strutils
 import ../../values/color/rgb_color
 import ../../values/color/hex_color
 import ../../values/color/cmyk_color
+import ../../values/color/hsl_color
 import ../rgb_color_service/rgb_color_converter
 
 type HexCollorConverter* = object
@@ -24,3 +25,7 @@ proc toRgb*(converterObj: HexCollorConverter): RgbColor =
 proc toCmyk*(converterObj: HexCollorConverter): CmykColor  =  
   let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
   return rgb_color_converter.toCmyk()
+
+proc toHsl*(converterObj: HexCollorConverter): HslColor  =  
+  let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
+  return rgb_color_converter.toHsl()

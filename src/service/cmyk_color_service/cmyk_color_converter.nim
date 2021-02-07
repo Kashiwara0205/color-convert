@@ -3,6 +3,7 @@ import ../rgb_color_service/rgb_color_converter
 import ../../values/color/hex_color
 import ../../values/color/rgb_color
 import ../../values/color/cmyk_color
+import ../../values/color/hsl_color
 
 type CmykColorConverter* = object
   color: CmykColor
@@ -28,3 +29,7 @@ proc toCmyk*(converterObj: CmykColorConverter): CmykColor =
 proc toHex*(converterObj: CmykColorConverter): HexCollor =  
   let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
   return rgb_color_converter.toHex()
+
+proc toHsl*(converterObj: CmykColorConverter): HslColor =  
+  let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
+  return rgb_color_converter.toHsl()

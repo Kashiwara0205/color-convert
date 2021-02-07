@@ -3,6 +3,7 @@ import ../../../src/values/color/hex_color
 import ../../../src/values/color/rgb_color
 import ../../../src/values/color/cmyk_color
 import ../../../src/values/color/hsl_color
+
 import unittest
 
 suite "check RgbColorConverter":
