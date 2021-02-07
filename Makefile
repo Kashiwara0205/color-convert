@@ -20,8 +20,8 @@ build:
 
 	sh test/system/test.sh
 
-cmyk_color_converter_test:
-	nim c -o:test_result/cmyk_color_converter_test -r test/unit/converters/cmyk_color_converter_test.nim
-	
+rgb_color_converter_test:
+	nim c -o:test_result/rgb_color_converter_test -r test/unit/converters/rgb_color_converter_test.nim
+
 unit_color_option:
 	nim c -o:test_result/color_option_test -r test/unit/option/color_option_test.nim

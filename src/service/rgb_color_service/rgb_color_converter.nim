@@ -1,9 +1,11 @@
 import strutils
 import  math
 from strformat import fmt
+import ./rgb_to_hsl_caliculator
 import ../../values/color/rgb_color
 import ../../values/color/hex_color
 import ../../values/color/cmyk_color
+import ../../values/color/hsl_color
 
 type RgbColorConverter* = object
   color: RgbColor
@@ -33,8 +35,12 @@ proc toCmyk*(converterObj: RgbColorConverter): CmykColor =
   let m = if k == 1: 1.0 else: (1 - g_dush - k) / (1 - k)
   let y = if k == 1: 1.0 else: (1 - b_dush - k) / (1 - k)
 
-  return createCmykColor(float(round(c * 100)), float(round(m * 100)), 
-                         float(round(y * 100)), float(round(k * 100)))
+  return createCmykColor(round(c * 100), round(m * 100), 
+                         round(y * 100), round(k * 100))
 
 proc toRgb*(converterObj: RgbColorConverter): RgbColor = 
   return converterObj.color
+
+proc toHsl*(converterObj: RgbColorConverter): HslColor =
+  let calculator = RgbtoHslCaliculator()
+  return calculator.calc(converterObj.color)
