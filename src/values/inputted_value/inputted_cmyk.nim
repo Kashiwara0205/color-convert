@@ -1,6 +1,6 @@
 import strutils
 
-proc validInputtedCmyk(value: string) =
+proc validInputCmyk(value: string) =
   let cmyk_value = value.split(",")
 
   if cmyk_value.len != 4:
@@ -13,5 +13,5 @@ proc getInputValue*(inputed: InputtedCmyk): seq[string] =
   return inputed.value
 
 proc createInputtedCmyk*(value: string): InputtedCmyk = 
-  validInputtedCmyk(value)
+  validInputCmyk(value)
   return InputtedCmyk(value: value.split(",") )

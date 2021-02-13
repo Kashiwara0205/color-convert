@@ -4,7 +4,7 @@ import ./rgb_color_converter
 import ../../values/color/rgb_color
 import ../../values/color/cmyk_color
 import ../../values/color/hex_color
-import ../../values/color/rgb_color
+import ../../values/color/hsl_color
 import ../../values/inputted_value/inputted_rgb
 
 type RgbColorService* = ref object of BaseService
@@ -29,3 +29,7 @@ method toRgb*(service: RgbColorService, color_value: string): RgbColor =
 method toCmyk*(service: RgbColorService, color_value: string): CmykColor =
   let rgb_color_converter =  createConverter(color_value)
   return rgb_color_converter.toCmyk()
+
+method toHsl*(service: RgbColorService, color_value: string): HslColor =
+  let rgb_color_converter =  createConverter(color_value)
+  return rgb_color_converter.toHsl()

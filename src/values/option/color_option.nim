@@ -12,7 +12,7 @@ proc validInputOptionForm(input: string): bool =
 
 proc validInputOptionName(input: string): bool = 
   let splitedinput = input.split(":")
-  return @[I_OPTION_RGB, I_OPTION_HEX, I_OPTION_COLOR, I_OPTION_CMYK].anyIt(it == splitedinput[0])
+  return @[I_OPTION_RGB, I_OPTION_HEX, I_OPTION_COLOR, I_OPTION_CMYK, I_OPTION_HSL].anyIt(it == splitedinput[0])
 
 proc validOutputOptionName(output: string): bool = 
   return @[O_OPTION_RGB, O_OPTION_HEX, O_OPTION_CMYK, O_OPTION_HSL].anyIt(it == output)

@@ -83,3 +83,7 @@ checkExecutetion "Cmyk to Rgb"
 
 ./bin/color_convert --iCmyk:2,2,2,2 --oHsl > /dev/null 2>&1
 checkExecutetion "Cmyk to Hsl" 
+
+dispTitle "HslConvert"
+./bin/color_convert --iHsl:2,2,2 --oHsl > /dev/null 2>&1
+checkExecutetion "Hsl to Hsl" 
