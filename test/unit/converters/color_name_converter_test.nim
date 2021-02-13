@@ -68,33 +68,33 @@ suite "check ColorNameConverter":
   test "should convert to cmyk":
     var colorNameConverter = createColorNameConverter(createColorName("Red"))
     check 0 == colorNameConverter.toCmyk.getCyanColor
-    check 1 == colorNameConverter.toCmyk.getMagentaColor
-    check 1 == colorNameConverter.toCmyk.getYellowColor
+    check 100 == colorNameConverter.toCmyk.getMagentaColor
+    check 100 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("Green"))
-    check 1 == colorNameConverter.toCmyk.getCyanColor
+    check 100 == colorNameConverter.toCmyk.getCyanColor
     check 0 == colorNameConverter.toCmyk.getMagentaColor
-    check 1 == colorNameConverter.toCmyk.getYellowColor
+    check 100 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
   
     colorNameConverter = createColorNameConverter(createColorName("Blue"))
-    check 1 == colorNameConverter.toCmyk.getCyanColor
-    check 1 == colorNameConverter.toCmyk.getMagentaColor
+    check 100 == colorNameConverter.toCmyk.getCyanColor
+    check 100 == colorNameConverter.toCmyk.getMagentaColor
     check 0 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("Yellow"))
     check 0 == colorNameConverter.toCmyk.getCyanColor
     check 0 == colorNameConverter.toCmyk.getMagentaColor
-    check 1 == colorNameConverter.toCmyk.getYellowColor
+    check 100 == colorNameConverter.toCmyk.getYellowColor
     check 0 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("Black"))
-    check 1 == colorNameConverter.toCmyk.getCyanColor
-    check 1 == colorNameConverter.toCmyk.getMagentaColor
-    check 1 == colorNameConverter.toCmyk.getYellowColor
-    check 1 == colorNameConverter.toCmyk.getBlackColor
+    check 100 == colorNameConverter.toCmyk.getCyanColor
+    check 100 == colorNameConverter.toCmyk.getMagentaColor
+    check 100 == colorNameConverter.toCmyk.getYellowColor
+    check 100 == colorNameConverter.toCmyk.getBlackColor
 
     colorNameConverter = createColorNameConverter(createColorName("White"))
     check 0 == colorNameConverter.toCmyk.getCyanColor
@@ -105,23 +105,23 @@ suite "check ColorNameConverter":
   test "should convert to hsl":
     var colorNameConverter = createColorNameConverter(createColorName("Red"))
     check uint(0) == colorNameConverter.toHsl.getH
-    check 1 == colorNameConverter.toHsl.getS
-    check 0.5 == colorNameConverter.toHsl.getL
+    check 100 == colorNameConverter.toHsl.getS
+    check 50 == colorNameConverter.toHsl.getL
 
     colorNameConverter = createColorNameConverter(createColorName("Green"))
     check uint(120) == colorNameConverter.toHsl.getH
-    check 1 == colorNameConverter.toHsl.getS
-    check 0.5 == colorNameConverter.toHsl.getL
+    check 100 == colorNameConverter.toHsl.getS
+    check 50 == colorNameConverter.toHsl.getL
   
     colorNameConverter = createColorNameConverter(createColorName("Blue"))
     check uint(240) == colorNameConverter.toHsl.getH
-    check 1 == colorNameConverter.toHsl.getS
-    check 0.5 == colorNameConverter.toHsl.getL
+    check 100 == colorNameConverter.toHsl.getS
+    check 50 == colorNameConverter.toHsl.getL
 
     colorNameConverter = createColorNameConverter(createColorName("Yellow"))
     check uint(60) == colorNameConverter.toHsl.getH
-    check 1 == colorNameConverter.toHsl.getS
-    check 0.5 == colorNameConverter.toHsl.getL
+    check 100 == colorNameConverter.toHsl.getS
+    check 50 == colorNameConverter.toHsl.getL
 
     colorNameConverter = createColorNameConverter(createColorName("Black"))
     check uint(0) == colorNameConverter.toHsl.getH
@@ -131,4 +131,4 @@ suite "check ColorNameConverter":
     colorNameConverter = createColorNameConverter(createColorName("White"))
     check uint(0) == colorNameConverter.toHsl.getH
     check 0 == colorNameConverter.toHsl.getS
-    check 1 == colorNameConverter.toHsl.getL
+    check 100 == colorNameConverter.toHsl.getL

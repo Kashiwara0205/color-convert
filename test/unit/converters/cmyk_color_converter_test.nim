@@ -65,8 +65,8 @@ suite "check CmykColorConverter":
     var hsl = cmyk_color_converter.toHsl()
 
     check uint(240) == hsl.getH
-    check 1.0 == hsl.getS()
-    check 0.5 == hsl.getL()
+    check 100 == hsl.getS()
+    check 50 == hsl.getL()
 
     cmyk = createCmykColor(100, 100, 100, 100)
     cmyk_color_converter = createCmykColorConverter(cmyk)
@@ -81,5 +81,5 @@ suite "check CmykColorConverter":
     hsl = cmyk_color_converter.toHsl()
 
     check uint(135) == hsl.getH
-    check 0.022 == hsl.getS()
-    check 0.357 == hsl.getL()
+    check 2.2 == hsl.getS()
+    check 35.69 == hsl.getL()

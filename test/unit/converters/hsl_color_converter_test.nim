@@ -141,6 +141,6 @@ suite "check HslColorConverter":
 
     var cmyk = hslColorConverter.toCmyk
     check 0 == cmyk.getCyanColor
-    check 0.36 == cmyk.getMagentaColor
-    check 0.36 == cmyk.getYellowColor
-    check 0.91 == cmyk.getBlackColor
+    check 36 == cmyk.getMagentaColor
+    check 36 == cmyk.getYellowColor
+    check 91 == cmyk.getBlackColor

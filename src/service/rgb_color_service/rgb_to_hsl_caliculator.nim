@@ -36,4 +36,4 @@ proc calc*(Calculator: RgbtoHslCaliculator, color: RgbColor): HslColor =
   let L = Calculator.calcL(c_max, c_min)
   let s = Calculator.calcS(L, delta)
   
-  return createHslColor(h, round(s, 3), round(L, 3))
+  return createHslColor(h, round(s * 100, 2), round(L * 100, 2))

@@ -30,7 +30,7 @@ proc createCmykText*(creater:TerminalTextCreater, color: CmykColor): TerminalTex
   let yellow = color.getYellowColor()
   let black = color.getBlackColor()
 
-  let terminal_text: TerminalText = fmt"[ C: { cyan } M: { magenda } Y: { yellow } B: { black } ]"
+  let terminal_text: TerminalText = fmt"[ C: { cyan }% M: { magenda }% Y: { yellow }% B: { black }% ]"
 
   return terminal_text
 
@@ -39,6 +39,6 @@ proc createHslText*(creater:TerminalTextCreater, color: HslCOlor): TerminalText 
   let s = color.getS()
   let L = color.getL()
 
-  let terminal_text: TerminalText = fmt"[ H: { h }° S: { s } L: { L } ]"
+  let terminal_text: TerminalText = fmt"[ H: { h }° S: { s }% L: { L }% ]"
 
   return terminal_text
