@@ -12,14 +12,14 @@ proc createCmykColorConverter*(color: CmykColor): CmykColorConverter =
   return CmykColorConverter(color: color)
 
 proc toRgb*(converterObj: CmykColorConverter): RgbColor = 
-  let c_percentage = 1 - ( float64( converterObj.color.getCyanColor ) * 0.01 )
-  let m_percentage = 1 - ( float64( converterObj.color.getMagentaColor ) * 0.01 )
-  let y_percentage = 1 - ( float64( converterObj.color.getYellowColor ) * 0.01 )
-  let k_percentage = 1 - ( float64( converterObj.color.getBlackColor ) * 0.01 )
+  let c_dush = 1 - ( float64( converterObj.color.getCyanColor ) * 0.01 )
+  let m_dush = 1 - ( float64( converterObj.color.getMagentaColor ) * 0.01 )
+  let y_dush = 1 - ( float64( converterObj.color.getYellowColor ) * 0.01 )
+  let k_dush = 1 - ( float64( converterObj.color.getBlackColor ) * 0.01 )
 
-  let r = uint( round(255 * c_percentage * k_percentage) )
-  let g = uint( round(255 * m_percentage * k_percentage) )
-  let b = uint( round(255 * y_percentage * k_percentage) )
+  let r = uint( round(255 * c_dush * k_dush) )
+  let g = uint( round(255 * m_dush * k_dush) )
+  let b = uint( round(255 * y_dush * k_dush) )
 
   return createRgb(r, g, b)
 
