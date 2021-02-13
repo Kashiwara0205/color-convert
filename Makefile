@@ -3,6 +3,7 @@ build:
 	nim c -o:test_result/rgb_color_converter_test -r test/unit/converters/rgb_color_converter_test.nim
 	nim c -o:test_result/color_name_converter_test -r test/unit/converters/color_name_converter_test.nim
 	nim c -o:test_result/cmyk_color_converter_test -r test/unit/converters/cmyk_color_converter_test.nim
+	nim c -o:test_result/hsl_color_converter_test -r test/unit/converters/hsl_color_converter_test.nim
 
 	nim c -o:test_result/rgb_color_test -r test/unit/color/rgb_color_test.nim
 	nim c -o:test_result/hex_color_test -r test/unit/color/hex_color_test.nim
