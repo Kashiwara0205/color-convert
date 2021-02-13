@@ -1,9 +1,9 @@
 import strutils
 
-proc valudInputCmyk(value: string) =
-  let cmyk_value = value.split(",")
+proc validInputtedRgb(value: string) =
+  let rgb_value = value.split(",")
 
-  if cmyk_value.len != 3:
+  if rgb_value.len != 3:
     raise Exception.newException("Not enough arguments") 
 
 type InputtedRgb* = object
@@ -13,5 +13,5 @@ proc getInputValue*(inputed: InputtedRgb): seq[string] =
   return inputed.value
 
 proc createInputtedRgb*(value: string): InputtedRgb = 
-  valudInputCmyk(value)
+  validInputtedRgb(value)
   return InputtedRgb(value: value.split(",") )
