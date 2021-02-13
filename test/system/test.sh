@@ -85,5 +85,14 @@ checkExecutetion "Cmyk to Rgb"
 checkExecutetion "Cmyk to Hsl" 
 
 dispTitle "HslConvert"
+./bin/color_convert --iHsl:2,2,2 --oRgb > /dev/null 2>&1
+checkExecutetion "Hsl to Rgb" 
+
+./bin/color_convert --iHsl:2,2,2 --oCmyk > /dev/null 2>&1
+checkExecutetion "Hsl to Cmyk" 
+
+./bin/color_convert --iHsl:2,2,2 --oHex > /dev/null 2>&1
+checkExecutetion "Hsl to Hex" 
+
 ./bin/color_convert --iHsl:2,2,2 --oHsl > /dev/null 2>&1
 checkExecutetion "Hsl to Hsl" 

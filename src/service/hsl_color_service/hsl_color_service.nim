@@ -18,6 +18,18 @@ proc createConverter(color_value: string): HslCollorConverter =
 
   return colorConverter
 
-method toHsl*(service: HslColorService, hex_color_text: string): HslColor =
-  var hex_color_converter = createConverter(hex_color_text)
-  return hex_color_converter.toHsl()
+method toHsl*(service: HslColorService, hsl_color_text: string): HslColor =
+  var hsl_color_converter = createConverter(hsl_color_text)
+  return hsl_color_converter.toHsl()
+
+method toRgb*(service: HslColorService, hsl_color_text: string): RgbColor =
+  var hsl_color_converter = createConverter(hsl_color_text)
+  return hsl_color_converter.toRgb()
+
+method toCmyk*(service: HslColorService, hsl_color_text: string): CmykColor =
+  var hsl_color_converter = createConverter(hsl_color_text)
+  return hsl_color_converter.toCmyk()
+
+method toHex*(service: HslColorService, hsl_color_text: string): HexCollor =
+  var hsl_color_converter = createConverter(hsl_color_text)
+  return hsl_color_converter.toHex()

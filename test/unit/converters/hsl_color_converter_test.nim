@@ -127,3 +127,20 @@ suite "check HslColorConverter":
     check 1'u == hslColorConverter.toHsl.getH
     check 2 == hslColorConverter.toHsl.getS
     check 3 == hslColorConverter.toHsl.getL
+
+  test "should convert to hex":
+    var hslColor = createHslColor(0, 22, 7)
+    var hslColorConverter = createHslColorConverter(hslColor)
+
+    var hex = hslColorConverter.toHex
+    check "160E0E" == hex.getColor
+
+  test "should convert to cmyk":
+    var hslColor = createHslColor(0, 22, 7)
+    var hslColorConverter = createHslColorConverter(hslColor)
+
+    var cmyk = hslColorConverter.toCmyk
+    check 0 == cmyk.getCyanColor
+    check 0.36 == cmyk.getMagentaColor
+    check 0.36 == cmyk.getYellowColor
+    check 0.91 == cmyk.getBlackColor

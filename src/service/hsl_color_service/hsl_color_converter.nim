@@ -1,5 +1,4 @@
 import math
-import strutils
 import ../../values/color/rgb_color
 import ../../values/color/hex_color
 import ../../values/color/cmyk_color
@@ -52,3 +51,11 @@ proc toRgb*(converterObj: HslCollorConverter): RgbColor =
   let b = uint( round( ( b_dush + m ) * 255 ) )
 
   return createRgb(r, g, b)
+
+proc toCmyk*(converterObj: HslCollorConverter): CmykColor =
+  let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
+  return rgb_color_converter.toCmyk()
+
+proc toHex*(converterObj: HslCollorConverter): HexCollor =
+  let rgb_color_converter = createRgbColorConverter(converterObj.toRgb())
+  return rgb_color_converter.toHex()
