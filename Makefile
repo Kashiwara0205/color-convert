@@ -22,6 +22,9 @@ build:
 
 	sh test/system/test.sh
 
+hsl_color_converter_test:
+	nim c -o:test_result/hsl_color_converter_test -r test/unit/converters/hsl_color_converter_test.nim
+
 rgb_color_converter_test:
 	nim c -o:test_result/rgb_color_converter_test -r test/unit/converters/rgb_color_converter_test.nim
 
